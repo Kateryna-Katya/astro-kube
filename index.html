@@ -1,56 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/astro-kube/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro-Kube | Инновации на пальцах</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" crossorigin src="/astro-kube/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/astro-kube/assets/styles-guStct1H.css">
+    <link rel="stylesheet" crossorigin href="/astro-kube/assets/styles-DhaTTCuY.css">
   </head>
   <body>
-    <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
+    <header class="header" id="header">
+  <div class="container header__container">
+    <a href="/" class="header__logo">
+      <span class="logo__icon"></span>
+      <span class="logo__text">Astro-Kube</span>
+    </a>
+
+    <nav class="header__nav" id="nav-menu">
+      <ul class="nav__list">
+        <li><a href="#about" class="nav__link">О платформе</a></li>
+        <li><a href="#benefits" class="nav__link">Преимущества</a></li>
+        <li><a href="#tech" class="nav__link">Технологии</a></li>
+        <li><a href="#education" class="nav__link">Обучение</a></li>
+        <li><a href="#contact" class="nav__link mobile-only">Связаться</a></li>
       </ul>
     </nav>
+
+    <div class="header__actions">
+      <a href="#contact" class="btn btn--primary btn--header-desktop">Связаться</a>
+
+      <button class="burger" id="burger-menu" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-
-    <main>
+    <main id="main-content">
       <!-- Loads the specified .html file -->
-      
+      <section class="hero" id="hero">
+    <div class="container hero__container">
+        <div class="hero__content">
+            <div class="hero__badge animate-fade-in">
+                <span class="badge__dot"></span>
+                Платформа года в Европе
+            </div>
+            <h1 class="hero__title animate-up">
+                Инновации на пальцах: Твой квантовый прыжок в будущее
+            </h1>
+            <p class="hero__subtitle animate-up-delay">
+                Передовая цифровая инфраструктура и AI-инструменты для реальных задач. Постройте карьеру, которая
+                работает на вас.
+            </p>
+            <div class="hero__actions animate-up-delay-2">
+                <a href="#contact" class="btn btn--primary btn--lg">Начать сейчас</a>
+                <a href="#about" class="btn btn--outline btn--lg">Узнать детали</a>
+            </div>
+        </div>
+
+        <div class="hero__visual">
+            <div class="kube-wrapper">
+                <div class="kube">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                </div>
+                <div class="kube-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero__decor-blob"></div>
+</section>
+<section class="about" id="about">
+    <div class="container">
+        <div class="about__grid">
+            <div class="about__header reveal">
+                <h2 class="section-title">Переосмыслите подход к развитию</h2>
+                <p class="section-subtitle">
+                    Astro-Kube — это мост между сложными технологиями будущего и вашим ежедневным успехом. Мы делаем
+                    инновации доступными, понятными и применимыми здесь и сейчас.
+                </p>
+                <div class="about__stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-text">AI-инструментов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2 мин</span>
+                        <span class="stat-text">Быстрый старт</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about__cards">
+                <div class="info-card reveal">
+                    <div class="info-card__icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="info-card__title">Технологии нового поколения</h3>
+                    <p class="info-card__text">
+                        Используйте передовую цифровую инфраструктуру, которая раньше была доступна только крупным
+                        корпорациям.
+                    </p>
+                </div>
+
+                <div class="info-card reveal" style="transition-delay: 0.1s;">
+                    <div class="info-card__icon">
+                        <i data-lucide="layout"></i>
+                    </div>
+                    <h3 class="info-card__title">Пошаговый путь</h3>
+                    <p class="info-card__text">
+                        Легко разобраться без опыта. Мы предлагаем путь, понятный каждому, от новичка до профессионала.
+                    </p>
+                </div>
+
+                <div class="info-card reveal" style="transition-delay: 0.2s;">
+                    <div class="info-card__icon">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3 class="info-card__title">Стратегия роста</h3>
+                    <p class="info-card__text">
+                        Методологии, доказавшие эффективность. Оцените перспективы проекта и начните масштабирование.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="benefits" id="benefits">
+    <div class="container">
+        <div class="benefits__header reveal">
+            <h2 class="section-title">Почему выбирают Astro-Kube?</h2>
+            <p class="section-subtitle">Исследуйте возможности, которые открывает наша экосистема для вашего роста.</p>
+        </div>
+
+        <div class="tabs reveal">
+            <div class="tabs__nav">
+                <button class="tabs__btn active" data-tab="tab-1">
+                    <i data-lucide="cpu"></i>
+                    <span>AI-Инструменты</span>
+                </button>
+                <button class="tabs__btn" data-tab="tab-2">
+                    <i data-lucide="globe"></i>
+                    <span>Экосистема</span>
+                </button>
+                <button class="tabs__btn" data-tab="tab-3">
+                    <i data-lucide="briefcase"></i>
+                    <span>Карьера</span>
+                </button>
+            </div>
+
+            <div class="tabs__content">
+                <div class="tabs__panel active" id="tab-1">
+                    <div class="panel__grid">
+                        <div class="panel__image">
+                            <img src="img/placeholder.png" alt="AI Tools">
+                        </div>
+                        <div class="panel__info">
+                            <h3>Решения, которые меняют правила игры</h3>
+                            <p>Получите доступ к AI-инструментам для реальных задач. Автоматизируйте рутину и
+                                сфокусируйтесь на творчестве и стратегии.</p>
+                            <ul class="panel__list">
+                                <li><i data-lucide="check-circle"></i> Интеграция за 2 минуты</li>
+                                <li><i data-lucide="check-circle"></i> Поддержка по всем вопросам</li>
+                                <li><i data-lucide="check-circle"></i> Регулярные обновления</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs__panel" id="tab-2">
+                    <div class="panel__grid">
+                        <div class="panel__image">
+                            <img src="img/placeholder.png" alt="Ecosystem">
+                        </div>
+                        <div class="panel__info">
+                            <h3>Передовая цифровая инфраструктура</h3>
+                            <p>Мы создали среду, где каждая технология работает на вас. Единый доступ ко всем
+                                образовательным модулям платформы.</p>
+                            <ul class="panel__list">
+                                <li><i data-lucide="check-circle"></i> Безопасность данных (GDPR)</li>
+                                <li><i data-lucide="check-circle"></i> Доступность в любой точке мира</li>
+                                <li><i data-lucide="check-circle"></i> Облачная синхронизация</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs__panel" id="tab-3">
+                    <div class="panel__grid">
+                        <div class="panel__image">
+                            <img src="img/placeholder.png" alt="Career">
+                        </div>
+                        <div class="panel__info">
+                            <h3>Постройте карьеру мечты</h3>
+                            <p>Программа пассивного дохода и практики, применимые уже сегодня. Получите навыки, которые
+                                востребованы на рынке 2026 года.</p>
+                            <ul class="panel__list">
+                                <li><i data-lucide="check-circle"></i> Сертификация европейского образца</li>
+                                <li><i data-lucide="check-circle"></i> Нетворкинг с экспертами</li>
+                                <li><i data-lucide="check-circle"></i> Помощь в трудоустройстве</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="innovations" id="tech">
+    <div class="container">
+        <div class="innovations__header reveal">
+            <h2 class="section-title">Ваш путь в мир будущего</h2>
+            <p class="section-subtitle">Мы разложили сложные технологии на понятные этапы. Пройдите этот путь вместе с
+                Astro-Kube.</p>
+        </div>
+
+        <div class="stream">
+            <div class="stream__line">
+                <div class="stream__progress" id="stream-progress"></div>
+            </div>
+
+            <div class="stream__item stream__item--left reveal">
+                <div class="stream__dot">1</div>
+                <div class="stream__content">
+                    <span class="stream__tag">Старт</span>
+                    <h3>AI-аналитика трендов</h3>
+                    <p>На первом этапе наша платформа использует AI-инструменты для реальных задач: анализа рынка и
+                        поиска ниш, которые выстрелят завтра.</p>
+                </div>
+            </div>
+
+            <div class="stream__item stream__item--right reveal">
+                <div class="stream__dot">2</div>
+                <div class="stream__content">
+                    <span class="stream__tag">Интеграция</span>
+                    <h3>Цифровая инфраструктура</h3>
+                    <p>Передовая цифровая инфраструктура позволяет развернуть проект за считанные минуты. Мы убираем
+                        технические барьеры.</p>
+                </div>
+            </div>
+
+            <div class="stream__item stream__item--left reveal">
+                <div class="stream__dot">3</div>
+                <div class="stream__content">
+                    <span class="stream__tag">Рост</span>
+                    <h3>Квантовое масштабирование</h3>
+                    <p>Решения, которые меняют правила игры: используйте методологии, доказавшие эффективность для
+                        быстрого роста в Европе.</p>
+                </div>
+            </div>
+
+            <div class="stream__item stream__item--right reveal">
+                <div class="stream__dot">4</div>
+                <div class="stream__content">
+                    <span class="stream__tag">Результат</span>
+                    <h3>Career Ecosystem</h3>
+                    <p>Постройте карьеру, которая работает на вас. Финальная точка — полная автоматизация и пассивный
+                        доход на базе инноваций.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="knowledge" id="education">
+    <div class="container">
+        <div class="knowledge__header reveal">
+            <h2 class="section-title">База знаний Astro-Kube</h2>
+            <p class="section-subtitle">Практики, применимые уже сегодня. Получите больше информации в наших
+                образовательных модулях.</p>
+        </div>
+
+        <div class="bento-grid">
+            <div class="bento-item bento-item--large reveal">
+                <div class="bento-item__content">
+                    <span class="bento-item__tag">Курс месяца</span>
+                    <h3>AI-инструменты для реальных задач</h3>
+                    <p>Пошаговый путь, понятный каждому: от базовой настройки нейросетей до автоматизации
+                        бизнес-процессов.</p>
+                    <a href="#contact" class="btn btn--white">Запросить доступ</a>
+                </div>
+                <div class="bento-item__icon-bg">
+                    <i data-lucide="brain"></i>
+                </div>
+            </div>
+
+            <div class="bento-item bento-item--medium reveal" style="transition-delay: 0.1s;">
+                <div class="bento-item__content">
+                    <span class="bento-item__tag">Инсайт</span>
+                    <h3>Стратегия роста 2026</h3>
+                    <p>Как масштабировать проект на рынке Европы, используя цифровой маркетинг нового поколения.</p>
+                </div>
+                <i data-lucide="trending-up" class="bento-item__icon"></i>
+            </div>
+
+            <div class="bento-item bento-item--video reveal" style="transition-delay: 0.2s;">
+                <div class="bento-item__overlay">
+                    <i data-lucide="play-circle"></i>
+                    <span>Смотреть демо (2 мин)</span>
+                </div>
+                <div class="bento-item__content">
+                    <h3>Быстрый и лёгкий старт</h3>
+                </div>
+            </div>
+
+            <div class="bento-item bento-item--small reveal" style="transition-delay: 0.3s;">
+                <div class="bento-item__content">
+                    <i data-lucide="users"></i>
+                    <h3>12k+</h3>
+                    <p>Активных студентов</p>
+                </div>
+            </div>
+
+            <div class="bento-item bento-item--small reveal" style="transition-delay: 0.4s;">
+                <div class="bento-item__content">
+                    <i data-lucide="award"></i>
+                    <h3>IT-карьера</h3>
+                    <p>Международная сертификация</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact__grid reveal">
+            <div class="contact__info">
+                <h2 class="section-title">Готовы начать?</h2>
+                <p class="section-subtitle">Оставьте заявку на бесплатную консультацию по всем вопросам. Наши эксперты
+                    свяжутся с вами в течение 30 минут.</p>
+
+                <div class="contact__methods">
+                    <div class="method-item">
+                        <div class="method-icon"><i data-lucide="map-pin"></i></div>
+                        <div>
+                            <h4>Наш офис</h4>
+                            <p>15-19 Bloomsbury Way, London, UK</p>
+                        </div>
+                    </div>
+                    <div class="method-item">
+                        <div class="method-icon"><i data-lucide="mail"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@astro-kube.blog</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact__form-wrapper">
+                <form class="form" id="main-form">
+                    <div class="form__group">
+                        <input type="text" name="name" class="form__input" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" name="email" class="form__input" placeholder="Email адрес" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="tel" name="phone" id="phone-input" class="form__input"
+                            placeholder="Телефон (только цифры)" required>
+                    </div>
+
+                    <div class="form__captcha">
+                        <label class="captcha__label">Решите пример: <span id="captcha-question"></span></label>
+                        <input type="number" id="captcha-answer" class="form__input form__input--sm" placeholder="Ответ"
+                            required>
+                    </div>
+
+                    <div class="form__agreement">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span class="checkbox__text">Я согласен с <a href="./personal-data-policy.html">политикой
+                                    обработки данных</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+                        <span>Запросить доступ</span>
+                    </button>
+                </form>
+
+                <div class="form-success" id="form-success">
+                    <div class="success-icon"><i data-lucide="check-circle"></i></div>
+                    <h3>Заявка принята!</h3>
+                    <p>Менеджер платформы уже изучает ваш запрос. Ожидайте звонка.</p>
+                    <button class="btn btn--outline btn--sm" onclick="resetForm()">Отправить еще раз</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <a href="/" class="footer__logo">Astro-Kube</a>
+      <p class="footer__description">
+        Переосмыслите подход к развитию. Платформа года для тех, кто строит будущее уже сегодня.
+      </p>
+      <div class="footer__socials">
+        <i data-lucide="twitter"></i>
+        <i data-lucide="linkedin"></i>
+        <i data-lucide="github"></i>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Меню</h4>
+      <ul class="footer__links">
+        <li><a href="#about">О платформе</a></li>
+        <li><a href="#benefits">Преимущества</a></li>
+        <li><a href="#tech">Технологии</a></li>
+        <li><a href="#education">Обучение</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Юридическая информация</h4>
+      <ul class="footer__links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="return.html">Return Policy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="personal-data-policy.html">Personal Data</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Контакты</h4>
+      <ul class="footer__contact-info">
+        <li>
+          <i data-lucide="phone" class="icon-small"></i>
+          <a href="tel:+442079460123">+44 20 7946 0123</a>
+        </li>
+        <li>
+          <i data-lucide="mail" class="icon-small"></i>
+          <a href="mailto:hello@astro-kube.blog">hello@astro-kube.blog</a>
+        </li>
+        <li>
+          <i data-lucide="map-pin" class="icon-small"></i>
+          <span>15-19 Bloomsbury Way, Holborn, London WC1A 2TH, United Kingdom</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container">
+      <p>&copy; 2026 Astro-Kube. Платформа уже доступна в Европе.</p>
+    </div>
   </div>
 </footer>
-
-
+<div class="cookie-popup" id="cookie-popup">
+  <div class="cookie-popup__container">
+    <div class="cookie-popup__content">
+      <i data-lucide="cookie" class="cookie-icon"></i>
+      <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie
+          политике</a>.</p>
+    </div>
+    <button class="btn btn--primary btn--sm" id="cookie-accept">Принять</button>
+  </div>
+</div>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
   </body>
 </html>
